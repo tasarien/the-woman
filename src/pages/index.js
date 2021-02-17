@@ -33,15 +33,20 @@ const linkStyle = {
   textDecoration: "none",
 }
 
+const imgStyle = {
+  width: "100px",
+}
+
 const albumsList = (data) => {
   return data.map((album) => {
     return (
-      <div key={album.id}>
+      <div style={{alignItems: "center", display: "flex", flexDirection: "column"}} key={album.id}>
         <h1>
           {album.title}
         </h1>
+        <img style={imgStyle} src={album.picture.url} alt=""/>
         {trackList(album.tracks)}
-        <hr></hr>
+        <hr style={{width:"100px", margin: "20px 0px 20px 0px"}}></hr>
       </div>
     )
   })
@@ -76,6 +81,9 @@ function IndexPage() {
           id
           title
           yearOfRelease
+          picture {
+            url
+          }
           tracks {
             no
             originalTrack
