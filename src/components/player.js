@@ -66,7 +66,7 @@ function Player(props) {
             </span>
             <ReactAudioPlayer
             controls
-            src={props.track.audioTrack.url}
+            src={props.track.audioTrack.url ? props.track.audioTrack.url : null}
             style={audioplayer}/>
             <div style={dataContainerStyle}>
                 <span>Album: {props.track.album.title} | Autor: {props.track.textAuthor} | Rok wydania: {props.track.album.yearOfRelease}</span>
